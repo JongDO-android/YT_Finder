@@ -42,7 +42,6 @@ public class ChannelPlaylist_page extends Fragment {
     private RecyclerAdapter recyclerAdapter;
 
     //Channel Playlist Query
-    private static String APP_KEY = "AIzaSyAYnBWhkb6lulCaBrpqOzWfYmyQ7YePSLI";
 
     public ChannelPlaylist_page() {
     }
@@ -74,14 +73,15 @@ public class ChannelPlaylist_page extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerAdapter = new RecyclerAdapter(getActivity(), mList);
         recyclerView.setAdapter(recyclerAdapter);
-        recyclerView.addItemDecoration(new RecyclerView_DC(5));
+        recyclerView.addItemDecoration(new RecyclerView_DC(15));
     }
 
     @SuppressLint("StaticFieldLeak")
     public class YouTubeAPIRequest extends AsyncTask<Void, String, String> {
         private String CHANNEL_GET_URL;
+        private String APP_KEY = "AIzaSyAYnBWhkb6lulCaBrpqOzWfYmyQ7YePSLI";
 
-        public YouTubeAPIRequest(String channelID){
+        private YouTubeAPIRequest(String channelID){
             CHANNEL_GET_URL = "https://www.googleapis.com/youtube/v3/search?" +
                     "part=snippet" +
                     "&order=date"+
@@ -144,7 +144,6 @@ public class ChannelPlaylist_page extends Fragment {
                                 JSONObject jsonSnippet = json.getJSONObject("snippet");
 
                                 String title = jsonSnippet.getString("title");
-                                String description = jsonSnippet.getString("description");
                                 String publishedAt = jsonSnippet.getString("publishedAt");
                                 String Thumbnail = jsonSnippet.getJSONObject("thumbnails")
                                         .getJSONObject("high").getString("url");
@@ -153,7 +152,6 @@ public class ChannelPlaylist_page extends Fragment {
                                 VideoDetails videoDetails = new VideoDetails();
                                 videoDetails.setVideo_ID(video_ID);
                                 videoDetails.setTitle(title);
-                                videoDetails.setDescription(description);
                                 videoDetails.setPublishedAt(publishedAt);
                                 videoDetails.setThumbnail(Thumbnail);
                                 mList.add(videoDetails);

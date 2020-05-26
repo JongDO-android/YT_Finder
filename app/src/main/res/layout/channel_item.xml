@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layerType="software"
@@ -29,7 +28,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/rk"
-            android:gravity="left"
             android:text="@string/channelName"
             android:textColor="@color/colorBlack"
             android:textSize="15sp"
@@ -61,7 +59,7 @@
             android:textColor="@color/colorGray"
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.194"
+            app:layout_constraintHorizontal_bias="0.069"
             app:layout_constraintStart_toEndOf="@+id/textView"
             app:layout_constraintTop_toBottomOf="@+id/channel_title" />
 
@@ -88,7 +86,7 @@
             android:textColor="@color/colorGray"
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.194"
+            app:layout_constraintHorizontal_bias="0.069"
             app:layout_constraintStart_toEndOf="@+id/textView2"
             app:layout_constraintTop_toBottomOf="@+id/channel_subscribers" />
 

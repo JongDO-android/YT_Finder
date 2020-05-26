@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="436dp">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/profile"
             android:layout_width="match_parent"
-            android:layout_height="255dp"
+            android:layout_height="297dp"
             android:contentDescription="@string/title"
-            android:onClick="playVideo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -29,6 +27,8 @@
             android:layout_marginTop="16dp"
             android:fontFamily="@font/kukde_b"
             android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
             android:text="@string/title"
             android:textColor="@color/colorBlack"
             android:textSize="15sp"
@@ -37,18 +37,20 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/profile" />
 
+
         <TextView
-            android:id="@+id/description"
+            android:id="@+id/textView4"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
+            android:layout_height="17dp"
+            android:layout_marginStart="280dp"
+            android:layout_marginTop="8dp"
             android:fontFamily="@font/kukde_l"
-            android:gravity="center"
-            android:text="@string/description"
+            android:text="@string/publish"
             android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title" />
+            app:layout_constraintTop_toBottomOf="@+id/title"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/publishedAt"
@@ -60,9 +62,10 @@
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.922"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/description" />
+            app:layout_constraintHorizontal_bias="0.216"
+            app:layout_constraintStart_toEndOf="@+id/textView4"
+            app:layout_constraintTop_toBottomOf="@+id/title"
+            app:layout_constraintVertical_bias="0.0" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

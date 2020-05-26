@@ -2,8 +2,6 @@ package org.techtown.mp_project.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,17 +15,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 
 import org.techtown.mp_project.Activity.ChannelInfoActivity;
-import org.techtown.mp_project.Fragment.ChannelPlaylist_page;
-import org.techtown.mp_project.Fragment.List_Page;
 import org.techtown.mp_project.Model.ChannelDetails;
 import org.techtown.mp_project.R;
 
 import java.text.DecimalFormat;
-import java.text.NumberFormat;
-import java.util.ArrayList;
 import java.util.List;
-
-import io.opencensus.resource.Resource;
 
 public class CH_RecyclerAdapter extends RecyclerView.Adapter<CH_RecyclerAdapter.ChannelDetailsViewHolder> {
     private List<ChannelDetails> channelList;

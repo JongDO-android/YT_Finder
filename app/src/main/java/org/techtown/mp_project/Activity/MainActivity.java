@@ -7,7 +7,7 @@ import android.os.Bundle;
 
 
 import org.techtown.mp_project.Adapter.ViewPagerAdapter;
-import org.techtown.mp_project.Fragment.List_Page;
+import org.techtown.mp_project.Fragment.ChannelList_Page;
 import org.techtown.mp_project.R;
 
 
@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
         ViewPager viewPager = findViewById(R.id.viewPager);
 
-        viewPagerAdapter.addItem(new List_Page(), R.drawable.search);
+        viewPagerAdapter.addItem(new ChannelList_Page(), R.drawable.search);
         viewPager.setAdapter(viewPagerAdapter);
 
 

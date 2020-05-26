@@ -7,13 +7,15 @@
     <string name="search">검색</string>
 
     <string name="channelName">채널명</string>
-    <string name="subscribers">구독자 수</string>
-    <string name="contentNumber">동영상 수</string>
+    <string name="subscribers">구독자 수 ·</string>
+    <string name="contentNumber">동영상 수 ·</string>
     <string name="channelInfo">채널 정보</string>
     <string name="publishedAt">게시 날짜</string>
     <string name="title">동영상 제목</string>
     <string name="description">동영상 설명</string>
     <string name="ten_thousand">만 명</string>
+
+    <string name="publish">게시일 ·</string>
 
     <string name="playlist">Play List</string>
 

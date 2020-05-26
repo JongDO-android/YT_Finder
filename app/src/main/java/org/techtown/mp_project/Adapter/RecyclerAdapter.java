@@ -52,14 +52,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.VideoD
 
         TextView title = holder.title;
         TextView publishedAt = holder.publishedAt;
-        TextView description = holder.description;
         ImageView thumbnail = holder.thumbnail;
 
         VideoDetails videoDetails = videoDetailsList.get(position);
 
         title.setText(videoDetails.getTitle());
-        publishedAt.setText(videoDetails.getPublishedAt());
-        description.setText(videoDetails.getDescription());
+        publishedAt.setText(setUpDateTime(videoDetails.getPublishedAt()));
 
         Glide.with(context).load(videoDetails.getThumbnail()).into(thumbnail);
     }
@@ -92,7 +90,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.VideoD
             super(itemView);
 
             title = itemView.findViewById(R.id.title);
-            description = itemView.findViewById(R.id.description);
             publishedAt = itemView.findViewById(R.id.publishedAt);
             thumbnail = itemView.findViewById(R.id.profile);
 

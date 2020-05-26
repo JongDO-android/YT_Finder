@@ -14,9 +14,10 @@ import org.techtown.mp_project.R;
 public class GridAdapter extends BaseAdapter {
     private Context context;
     private LayoutInflater layoutInflater;
-    private int[] gridresources = {R.drawable.movie, R.drawable.game, R.drawable.music,
-                                    R.drawable.food, R.drawable.dog, R.drawable.trip, R.drawable.issue};
-    private String[] gridtitle = {"영화 리뷰", "게임", "음악", "요리", "동물", "여행", "이슈"};
+    private int[] gridresources = {R.drawable.movie, R.drawable.league_of_legend, R.drawable.music,
+                                    R.drawable.food, R.drawable.dog, R.drawable.trip, R.drawable.issue,
+                                    R.drawable.scissors};
+    private String[] gridtitle = {"영화 리뷰", "롤", "음악", "요리/먹방", "애견", "여행", "이슈", "미용"};
     private int layout;
 
     public GridAdapter(Context context, int layout){

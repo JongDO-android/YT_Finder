@@ -2,6 +2,7 @@ package org.techtown.mp_project.Fragment;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -32,6 +34,7 @@ import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.techtown.mp_project.Activity.MainActivity;
 import org.techtown.mp_project.Adapter.CH_RecyclerAdapter;
 import org.techtown.mp_project.Adapter.GridAdapter;
 import org.techtown.mp_project.Adapter.RecyclerAdapter;
@@ -48,13 +51,14 @@ import java.util.Objects;
 import java.util.concurrent.ExecutionException;
 
 
-public class List_Page extends Fragment {
+public class ChannelList_Page extends Fragment {
     private CH_RecyclerAdapter ch_recyclerAdapter;
     private GridAdapter gridAdapter;
     private RecyclerView recyclerView;
     private List<ChannelDetails> searchList = new ArrayList<>();
 
     private static String APP_KEY = "AIzaSyAYnBWhkb6lulCaBrpqOzWfYmyQ7YePSLI";
+
 
     //YouTube play list Query
     private static String CHANNEL_ID = "UC1dG3vI9FfHnH3YgyeKUz_A";
@@ -145,12 +149,13 @@ public class List_Page extends Fragment {
                     try {
                         searchList.clear();
                         SEARCH_CATEGORY = URLEncoder.encode(SEARCH_CATEGORY, "UTF-8");
-                        String s = new YouTubeAPIRequest_Search().execute().get();
+                        new YouTubeAPIRequest_Search().execute();
+                        /*.get();
                         JSONObject json = new JSONObject(s);
 
-                        parseChannelListFromResponse(json);
+                        //parseChannelListFromResponse(json);*/
 
-                    } catch (UnsupportedEncodingException | InterruptedException | ExecutionException | JSONException e) {
+                    } catch (UnsupportedEncodingException e) {
                         e.printStackTrace();
                     }
 
@@ -176,12 +181,17 @@ public class List_Page extends Fragment {
                 "&order=date" +
                 "&q=" + SEARCH_CATEGORY +
                 "&key=" + APP_KEY +
-                "&maxResults=5";
+                "&maxResults=20";
+
+        ProgressDialog progressDialog = new ProgressDialog(getContext());
 
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
+            progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+            progressDialog.setMessage("채널 리스트 불러오는중...");
 
+            progressDialog.show();
         }
 
         @Override
@@ -204,16 +214,17 @@ public class List_Page extends Fragment {
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            /*if (s != null) {
+            if (s != null) {
                 try {
                     JSONObject jsonObject = new JSONObject(s);
-                    searchList = parseChannelListFromResponse(jsonObject);
-                    initChannelList(searchList);
+                    parseChannelListFromResponse(jsonObject);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-            }*/
+            }
+            progressDialog.dismiss();
         }
+
     }
 
     //채널의 구독자 수와 콘텐츠 수에 대한 정보를 불러오는 Task
@@ -285,8 +296,6 @@ public class List_Page extends Fragment {
 
     }
 
-
-
     //채널 ID, 채널 Title 가져오기
     private void parseChannelListFromResponse(JSONObject jsonObject) {
         if (jsonObject.has("items")) {
@@ -331,7 +340,6 @@ public class List_Page extends Fragment {
             }
         }
     }
-
     ////채널 구독자 수, 채널 동영상 수 가져오기
     private String[] paresChannelStatistics(JSONObject jsonObject) {
         String[] s = new String[2];
