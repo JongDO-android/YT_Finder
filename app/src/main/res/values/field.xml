@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="category">
+        <item>영화</item>
+        <item>게임</item>
+        <item>음악</item>
+        <item>요리</item>
+        <item>동물</item>
+        <item>여행</item>
+        <item>이슈</item>
+    </string-array>
+</resources>

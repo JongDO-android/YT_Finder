@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "514274724090",
+    "firebase_url": "https://ytbfinder.firebaseio.com",
+    "project_id": "ytbfinder",
+    "storage_bucket": "ytbfinder.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:514274724090:android:17741787e01fca4c37e143",
+        "android_client_info": {
+          "package_name": "org.techtown.mp_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "514274724090-36pk6ublbikv411988dtkpigt4lsbd8k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.techtown.mp_project",
+            "certificate_hash": "e188b8db4628425cb2e65a5b3c39a2ea8cb1073d"
+          }
+        },
+        {
+          "client_id": "514274724090-1q59m646uigilrgm8c5dkm5ab9on5ltq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFg6TJGLqujRP1KlrITdQd9Q1glzl9GMw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "514274724090-1q59m646uigilrgm8c5dkm5ab9on5ltq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
