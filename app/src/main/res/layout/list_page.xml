@@ -20,7 +20,7 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_marginTop="12dp"
-            android:background="@drawable/stroke"
+            android:background="@drawable/background_rounding"
             android:fontFamily="@font/kukde_l"
             android:text="@string/select"
             android:textSize="12sp"

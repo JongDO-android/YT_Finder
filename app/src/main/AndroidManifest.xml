@@ -14,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activity.ChannelInfoActivity"></activity>
+        <activity android:name=".Activity.WriteReviewActivity"></activity>
+        <activity android:name=".Activity.ChannelInfoActivity" />
         <activity android:name=".Activity.VideoPlayActivity" />
         <activity
             android:name=".Activity.SplashActivity"

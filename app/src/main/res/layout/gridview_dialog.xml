@@ -4,18 +4,19 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/dialog_stroke">
+    android:background="@drawable/stroke">
 
     <TextView
         android:id="@+id/title_dialog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:fontFamily="@font/kukde_b"
+        android:fontFamily="@font/rk"
         android:textSize="20sp"
         android:textColor="@color/colorBlack"
         android:text="@string/category"
-        android:background="@color/colorRed"/>
+        android:padding="10dp"
+        android:background="@drawable/stroke"/>
 
     <GridView
         android:id="@+id/grid_view"

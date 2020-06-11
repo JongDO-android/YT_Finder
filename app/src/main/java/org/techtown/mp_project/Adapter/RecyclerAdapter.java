@@ -83,7 +83,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.VideoD
     class VideoDetailsViewHolder extends RecyclerView.ViewHolder{
         private TextView publishedAt;
         private TextView title;
-        private TextView description;
         private ImageView thumbnail;
 
         private VideoDetailsViewHolder(View itemView){

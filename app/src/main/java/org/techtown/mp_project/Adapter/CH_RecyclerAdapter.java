@@ -37,7 +37,8 @@ public class CH_RecyclerAdapter extends RecyclerView.Adapter<CH_RecyclerAdapter.
         return new ChannelDetailsViewHolder(v);
     }
 
-    @Override    public void onBindViewHolder(@NonNull ChannelDetailsViewHolder holder, int position) {
+    @Override
+    public void onBindViewHolder(@NonNull ChannelDetailsViewHolder holder, int position) {
         TextView channel_title = holder.channel_title;
         TextView subscribers = holder.subscribers;
         TextView contentsNumber = holder.contentsNumber;
@@ -81,7 +82,7 @@ public class CH_RecyclerAdapter extends RecyclerView.Adapter<CH_RecyclerAdapter.
         return channelList.size();
     }
 
-    public static String toNumFormat(int num) {
+    private static String toNumFormat(int num) {
         DecimalFormat df = new DecimalFormat("#,###");
         return df.format(num);
     }

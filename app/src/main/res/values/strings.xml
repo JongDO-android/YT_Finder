@@ -1,24 +1,32 @@
 <resources>
     <string name="app_name">MP_Project</string>
+    <!--MainActivity-->
     <string name="start">시작하기</string>
     <string name="FindYoutube">유튜버를 찾아보세요!</string>
     <string name="category">카테고리를 선택해주세요!</string>
     <string name="select">선택</string>
     <string name="search">검색</string>
 
+    <!--Channel List page-->
     <string name="channelName">채널명</string>
-    <string name="subscribers">구독자 수 ·</string>
-    <string name="contentNumber">동영상 수 ·</string>
+    <string name="subscribers">구독자 수</string>
+    <string name="contentNumber">동영상 수</string>
     <string name="channelInfo">채널 정보</string>
-    <string name="publishedAt">게시 날짜</string>
-    <string name="title">동영상 제목</string>
-    <string name="description">동영상 설명</string>
     <string name="ten_thousand">만 명</string>
 
+    <!--Channel Playlist page-->
+    <string name="title">동영상 제목</string>
     <string name="publish">게시일 ·</string>
-
     <string name="playlist">Play List</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!--Review page-->
+    <string name="nickname">닉네임</string>
+    <string name="review">리뷰</string>
+    <string name="rating">평점</string>
+    <string name="write_review">write_review</string>
+    <string name="use_nickname">사용할 닉네임</string>
+    <string name="plz_write_review">리뷰를 적어주세요!</string>
+    <string name="commit">등록</string>
+    <string name="cancel">취소</string>
+
 </resources>
