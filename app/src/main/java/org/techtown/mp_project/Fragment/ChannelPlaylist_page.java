@@ -79,7 +79,7 @@ public class ChannelPlaylist_page extends Fragment {
     @SuppressLint("StaticFieldLeak")
     public class YouTubeAPIRequest extends AsyncTask<Void, String, String> {
         private String CHANNEL_GET_URL;
-        private String APP_KEY = "AIzaSyAYnBWhkb6lulCaBrpqOzWfYmyQ7YePSLI";
+        private String APP_KEY = "AIzaSyCXMEZ3x88ele_xQY5rpQ91G4Z8uUFzUPE";
 
         private YouTubeAPIRequest(String channelID){
             CHANNEL_GET_URL = "https://www.googleapis.com/youtube/v3/search?" +
@@ -87,7 +87,7 @@ public class ChannelPlaylist_page extends Fragment {
                     "&order=date"+
                     "&channelId="+channelID+
                     "&key="+APP_KEY+
-                    "&maxResults=50";
+                    "&maxResults=1";
         }
 
         @Override

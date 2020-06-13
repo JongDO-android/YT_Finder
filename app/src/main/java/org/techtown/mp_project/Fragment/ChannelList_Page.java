@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -57,17 +58,16 @@ public class ChannelList_Page extends Fragment {
     private RecyclerView recyclerView;
     private List<ChannelDetails> searchList = new ArrayList<>();
 
-    private static String APP_KEY = "AIzaSyAYnBWhkb6lulCaBrpqOzWfYmyQ7YePSLI";
-
+    private static String APP_KEY = "AIzaSyCXMEZ3x88ele_xQY5rpQ91G4Z8uUFzUPE";
 
     //YouTube play list Query
     private static String CHANNEL_ID = "UC1dG3vI9FfHnH3YgyeKUz_A";
-    private static String CHANNEL_GET_URL = "https://www.googleapis.com/youtube/v3/search?" +
+    /*private static String CHANNEL_GET_URL = "https://www.googleapis.com/youtube/v3/search?" +
             "part=snippet" +
             "&order=date" +
             "&channelId=" + CHANNEL_ID +
             "&key=" + APP_KEY +
-            "&maxResults=50";
+            "&maxResults=50";*/
 
     //YouTube Search list Query
     private String SEARCH_CATEGORY = "";
@@ -122,7 +122,7 @@ public class ChannelList_Page extends Fragment {
                 });
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                builder.setIcon(R.drawable.micon);
+                builder.setIcon(R.drawable.myicon);
                 builder.setView(gv);
                 builder.setPositiveButton("닫기", new DialogInterface.OnClickListener() {
                     @Override
@@ -181,7 +181,7 @@ public class ChannelList_Page extends Fragment {
                 "&order=date" +
                 "&q=" + SEARCH_CATEGORY +
                 "&key=" + APP_KEY +
-                "&maxResults=20";
+                "&maxResults=1";
 
         ProgressDialog progressDialog = new ProgressDialog(getContext());
 
@@ -190,6 +190,8 @@ public class ChannelList_Page extends Fragment {
             super.onPreExecute();
             progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
             progressDialog.setMessage("채널 리스트 불러오는중...");
+
+            Log.e("TAG", SEARCH_GET_URL);
 
             progressDialog.show();
         }
@@ -275,7 +277,9 @@ public class ChannelList_Page extends Fragment {
             Channel_Thumbnail_URL = "https://www.googleapis.com/youtube/v3/channels?" +
                     "part=snippet" +
                     "&id=" + channelID +
-                    "&key=AIzaSyAYnBWhkb6lulCaBrpqOzWfYmyQ7YePSLI";
+                    "&key=" + APP_KEY;
+
+            Log.e("Channel Thumbnail URL :", Channel_Thumbnail_URL);
         }
 
         @Override

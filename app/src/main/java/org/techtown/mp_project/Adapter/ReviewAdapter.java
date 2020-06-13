@@ -2,6 +2,7 @@ package org.techtown.mp_project.Adapter;
 
 import android.content.Context;
 import android.media.Rating;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,10 +20,35 @@ import java.util.ArrayList;
 public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ReviewViewHolder> {
     private Context context;
     private ArrayList<Review> reviews;
+    private double average_grade;
 
     public ReviewAdapter(Context context, ArrayList<Review> reviews){
         this.context = context;
         this.reviews = reviews;
+        average_grade = 0.0f;
+    }
+
+    public void addReview(Review review){
+        reviews.add(review);
+        notifyDataSetChanged();
+    }
+
+    public double CalculGrade(){
+        average_grade = 0.0;
+        double result = 0.0;
+        if(reviews != null && reviews.size() != 0){
+            for(int i = 0 ; i < reviews.size() ; i ++){
+                average_grade += reviews.get(i).getRating();
+            }
+
+            result = average_grade /(double) reviews.size();
+        }
+
+        return Math.round(result * 100) / (double) 100;
+    }
+
+    public void clear(){
+        reviews.clear();
     }
 
     @NonNull

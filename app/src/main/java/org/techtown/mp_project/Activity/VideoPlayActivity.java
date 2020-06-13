@@ -14,7 +14,7 @@ import com.google.android.youtube.player.YouTubePlayerView;
 import org.techtown.mp_project.R;
 
 public class VideoPlayActivity extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
-    public static final String GOOGLE_API_KEY = "AIzaSyAYnBWhkb6lulCaBrpqOzWfYmyQ7YePSLI";
+    public static final String GOOGLE_API_KEY = "AIzaSyCXMEZ3x88ele_xQY5rpQ91G4Z8uUFzUPE";
     public String VIDEO_ID = "";
 
     YouTubePlayerView youTubePlayerView = null;

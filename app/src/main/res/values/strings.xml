@@ -8,6 +8,7 @@
     <string name="search">검색</string>
 
     <!--Channel List page-->
+    <string name="empty">선택된 카테고리가 없습니다.</string>
     <string name="channelName">채널명</string>
     <string name="subscribers">구독자 수</string>
     <string name="contentNumber">동영상 수</string>
@@ -28,5 +29,6 @@
     <string name="plz_write_review">리뷰를 적어주세요!</string>
     <string name="commit">등록</string>
     <string name="cancel">취소</string>
+    <string name="review_eng">Review</string>
 
 </resources>

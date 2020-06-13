@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@drawable/review_stroke"
     android:layout_height="wrap_content">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -13,21 +14,24 @@
             android:id="@+id/nickname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/nickname"
-            android:textSize="15sp"
-            android:fontFamily="@font/rk"
-            android:textColor="@color/colorBlack"
+            android:layout_margin="10dp"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/nexon_gothic_bold"
             android:padding="10dp"
+            android:text="@string/nickname"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintVertical_bias="0.3" />
 
         <TextView
             android:id="@+id/review"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/rk"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/nexon_gothic"
             android:padding="10dp"
             android:text="@string/review"
             android:textColor="@color/colorBlack"
@@ -41,26 +45,29 @@
 
         <RatingBar
             android:id="@+id/ratingBar"
-            style="?android:attr/ratingBarStyleSmall"
+            style="@style/gold_star_Rating_bar_small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_margin="10dp"
+            android:isIndicator="true"
             android:numStars="5"
+            android:stepSize="0.5"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.297"
-            app:layout_constraintStart_toEndOf="@+id/rating"
-            app:layout_constraintTop_toBottomOf="@+id/review" />
+            app:layout_constraintHorizontal_bias="0.95"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/review"
+            app:layout_constraintVertical_bias="0.157" />
 
-        <TextView
-            android:id="@+id/rating"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="208dp"
-            android:layout_marginTop="8dp"
-            android:text="@string/rating"
-            android:fontFamily="@font/rk"
-            android:textSize="12sp"
-            app:layout_constraintStart_toEndOf="@+id/nickname"
-            app:layout_constraintTop_toBottomOf="@+id/review" />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="49dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/profile" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

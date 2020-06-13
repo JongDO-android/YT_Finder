@@ -17,37 +17,35 @@
 
         <Button
             android:id="@+id/select_button"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="12dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:background="@drawable/background_rounding"
-            android:fontFamily="@font/kukde_l"
+            android:fontFamily="@font/nexon_gothic"
             android:text="@string/select"
-            android:textSize="12sp"
+            android:textSize="21sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/search_btn"
+            app:layout_constraintHorizontal_bias="0.558"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/selectCategory"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/selectCategory" />
 
         <ImageButton
             android:id="@+id/search_btn"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="88dp"
+            android:background="@drawable/myicon"
             android:scaleType="fitCenter"
-            android:background="@drawable/micon"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/select_button"
-            app:layout_constraintVertical_bias="0.7" />
+            app:layout_constraintTop_toBottomOf="@+id/selectCategory" />
 
         <TextView
             android:id="@+id/selectCategory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="48dp"
-            android:fontFamily="@font/rk"
+            android:fontFamily="@font/nexon_gothic_bold"
             android:text="@string/category"
             android:textColor="@color/colorBlack"
             android:textSize="20sp"
@@ -66,6 +64,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

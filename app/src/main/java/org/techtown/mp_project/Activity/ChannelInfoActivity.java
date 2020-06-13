@@ -6,15 +6,13 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 
 import com.google.android.material.tabs.TabLayout;
 
 import org.techtown.mp_project.Adapter.ViewPagerAdapter;
-import org.techtown.mp_project.Fragment.ChannelDetails_Page;
+import org.techtown.mp_project.Fragment.Recommendation_Page;
 import org.techtown.mp_project.Fragment.ChannelPlaylist_page;
 import org.techtown.mp_project.Fragment.Review_Page;
-import org.techtown.mp_project.Model.TabInfo;
 import org.techtown.mp_project.R;
 
 public class ChannelInfoActivity extends AppCompatActivity {
@@ -32,12 +30,13 @@ public class ChannelInfoActivity extends AppCompatActivity {
 
         viewPagerAdapter.addItem(new ChannelPlaylist_page(), R.drawable.playlist);
         viewPagerAdapter.addItem(new Review_Page(), R.drawable.review);
-        viewPagerAdapter.addItem(new ChannelDetails_Page(), R.drawable.information);
+        viewPagerAdapter.addItem(new Recommendation_Page(), R.drawable.information);
 
         for(int i = 0 ; i < viewPagerAdapter.getCount() ; i ++){
             tabLayout.getTabAt(i).setIcon(viewPagerAdapter.getTabInfo(i).getIconRes());
         }
         ChannelPlaylist_page channelPlaylist_page = (ChannelPlaylist_page) viewPagerAdapter.getItem(0);
+        Review_Page review_page = (Review_Page) viewPagerAdapter.getItem(1);
         Intent intent = getIntent();
         Bundle bundle = new Bundle(3);
         bundle.putString("channelID", intent.getStringExtra("channelID"));
@@ -45,6 +44,7 @@ public class ChannelInfoActivity extends AppCompatActivity {
         bundle.putString("thumbnail", intent.getStringExtra("thumbnail"));
 
         channelPlaylist_page.setArguments(bundle);
+        review_page.setArguments(bundle);
 
     }
 }
