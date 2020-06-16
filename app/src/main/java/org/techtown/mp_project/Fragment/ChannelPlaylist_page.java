@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -87,7 +86,7 @@ public class ChannelPlaylist_page extends Fragment {
                     "&order=date"+
                     "&channelId="+channelID+
                     "&key="+APP_KEY+
-                    "&maxResults=1";
+                    "&maxResults=15";
         }
 
         @Override
@@ -99,7 +98,6 @@ public class ChannelPlaylist_page extends Fragment {
         protected String doInBackground(Void... voids) {
             HttpClient httpClient = new DefaultHttpClient();
             HttpGet httpGet = new HttpGet(CHANNEL_GET_URL);
-            Log.e("URL", CHANNEL_GET_URL);
 
             try {
                 HttpResponse response;
@@ -119,7 +117,6 @@ public class ChannelPlaylist_page extends Fragment {
             if (s != null) {
                 try {
                     JSONObject jsonObject = new JSONObject(s);
-                    Log.e("Response", jsonObject.toString());
                     mList = parseVideoListFromResponse(jsonObject);
                     initList(mList);
                 } catch (JSONException e) {

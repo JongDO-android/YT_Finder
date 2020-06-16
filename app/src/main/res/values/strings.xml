@@ -31,4 +31,8 @@
     <string name="cancel">취소</string>
     <string name="review_eng">Review</string>
 
+    <!--Recommendation Page-->
+    <string name="with">와 같이</string>
+    <string name="recommendation">추천 채널</string>
+
 </resources>

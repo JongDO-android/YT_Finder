@@ -181,7 +181,7 @@ public class ChannelList_Page extends Fragment {
                 "&order=date" +
                 "&q=" + SEARCH_CATEGORY +
                 "&key=" + APP_KEY +
-                "&maxResults=1";
+                "&maxResults=15";
 
         ProgressDialog progressDialog = new ProgressDialog(getContext());
 
@@ -191,7 +191,6 @@ public class ChannelList_Page extends Fragment {
             progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
             progressDialog.setMessage("채널 리스트 불러오는중...");
 
-            Log.e("TAG", SEARCH_GET_URL);
 
             progressDialog.show();
         }
@@ -200,7 +199,6 @@ public class ChannelList_Page extends Fragment {
         protected String doInBackground(Void... voids) {
             HttpClient httpClient = new DefaultHttpClient();
             HttpGet httpGet = new HttpGet(SEARCH_GET_URL);
-            Log.e("Search Category :", SEARCH_CATEGORY);
             try {
                 HttpResponse response;
                 response = httpClient.execute(httpGet);
@@ -279,7 +277,6 @@ public class ChannelList_Page extends Fragment {
                     "&id=" + channelID +
                     "&key=" + APP_KEY;
 
-            Log.e("Channel Thumbnail URL :", Channel_Thumbnail_URL);
         }
 
         @Override

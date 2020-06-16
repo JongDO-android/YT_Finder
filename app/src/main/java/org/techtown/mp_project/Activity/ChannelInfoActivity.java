@@ -37,6 +37,7 @@ public class ChannelInfoActivity extends AppCompatActivity {
         }
         ChannelPlaylist_page channelPlaylist_page = (ChannelPlaylist_page) viewPagerAdapter.getItem(0);
         Review_Page review_page = (Review_Page) viewPagerAdapter.getItem(1);
+        Recommendation_Page recommendation_page = (Recommendation_Page) viewPagerAdapter.getItem(2);
         Intent intent = getIntent();
         Bundle bundle = new Bundle(3);
         bundle.putString("channelID", intent.getStringExtra("channelID"));
@@ -45,6 +46,7 @@ public class ChannelInfoActivity extends AppCompatActivity {
 
         channelPlaylist_page.setArguments(bundle);
         review_page.setArguments(bundle);
+        recommendation_page.setArguments(bundle);
 
     }
 }
